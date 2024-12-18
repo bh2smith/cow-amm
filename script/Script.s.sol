@@ -8,12 +8,12 @@ import {IFaucet} from 'interfaces/IFaucet.sol';
 import {Script} from 'forge-std/Script.sol';
 import {Registry} from 'script/Registry.s.sol';
 
-/// @notice This base script is shared across `yarn script:{mainnet|testnet}`
+/// @notice This base script is shared across `bun script:{mainnet|testnet}`
 abstract contract BaseScript is Registry, Script {
   constructor() Registry(block.chainid) {}
 }
 
-/// @notice This script will be executed by `yarn script:mainnet`
+/// @notice This script will be executed by `bun script:mainnet`
 contract MainnetScript is BaseScript {
   function run() public {
     assert(block.chainid == 1 || block.chainid == 100);
@@ -25,7 +25,7 @@ contract MainnetScript is BaseScript {
   }
 }
 
-/// @notice This script will be executed by `yarn script:testnet`
+/// @notice This script will be executed by `bun script:testnet`
 contract TestnetScript is BaseScript {
   /// @notice ERC20 and Faucet addresses
   address internal constant _SEPOLIA_FAUCET = 0x26bfAecAe4D5fa93eE1737ce1Ce7D53F2a0E9b2d;
