@@ -11,8 +11,8 @@ Most users will want to consume the ABI definitions for BPool, BCoWPool, BFactor
 This project follows the standard Foundry project structure. 
 
 ```
-yarn build   # build artifacts to `out/`
-yarn test    # run the tests
+bun run build   # build artifacts to `out/`
+bun run test    # run the tests
 ```
 
 ## Changes on BPool from [Balancer V1](https://github.com/balancer/balancer-core)
